@@ -78,8 +78,8 @@
 \setkeys[ct]{cthesis}{figuresep=endash}
 
 % OPTION colorize
-% --> values = full|reduced|bw
-\define@choicekey*[ct]{cthesis}{colorize}[\val\colorizenr]{full,reduced,bw}[full]{\def\cthesis@colorize{\colorizenr}}
+% --> values = full|reduced|bw|minimal
+\define@choicekey*[ct]{cthesis}{colorize}[\val\colorizenr]{full,reduced,bw,minimal}[full]{\def\cthesis@colorize{\colorizenr}}
 \setkeys[ct]{cthesis}{colorize=full}
 
 % OPTION colortheme
@@ -181,7 +181,23 @@
 		\colorlet{ctcolorsubsection}{ctcolorblack}
 		% --> text colors
 		\colorlet{ctcolorfloatlabel}{ctcolorblack}
+    \colorlet{ctcolorlistlabel}{ctcolorblack}
+  \or
+		% case = 3 (colorize == minimal)
+		% --> footer colors
+		\colorlet{ctcolorfooterline}{ctcolorgray}
+		\colorlet{ctcolorfootertitle}{ctcolorgray}
+		% --> sectioning colors
+		\colorlet{ctcolortitle}{ctcolorblack}
+		\colorlet{ctcolorpartnum}{ctcolorblack}
+		\colorlet{ctcolorchapternum}{ctcolorblack}
+		\colorlet{ctcolorchapterline}{ctcolorwhite}
+		\colorlet{ctcolorsection}{ctcolorblack}
+		\colorlet{ctcolorsubsection}{ctcolorblack}
+		% --> text colors
+		\colorlet{ctcolorfloatlabel}{ctcolorblack}
 		\colorlet{ctcolorlistlabel}{ctcolorblack}
+
 	\else
 	\fi
 }
@@ -204,6 +220,7 @@
 }
 
 % defines general colors
+\definecolor{ctcolorwhite}{gray}{1}
 \definecolor{ctcolorblack}{gray}{0}
 \definecolor{ctcolorgray}{gray}{.5}
 \definecolor{ctcolorgraylight}{gray}{.8}
@@ -633,7 +650,7 @@
         \raggedleft{%
             {\color{ctcolorchapterline}\rule[-5pt]{2pt}{5cm}}%
             \quad%
-            {\color{ctcolorchapternum}\fontsize{60}{60}\selectfont#1}%
+            {\color{ctcolorchapternum}\fontsize{25}{25}\selectfont#1}%
         }%
     \end{minipage}%
 }
