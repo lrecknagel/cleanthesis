@@ -13,3 +13,6 @@
 *.fdb_latexmk
 *.fls
 *.lol
+
+# System
+.DS_Store
